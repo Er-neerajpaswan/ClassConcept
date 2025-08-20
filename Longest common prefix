@@ -1,0 +1,48 @@
+public class Leet14 {
+
+
+    public String CommonSequence(String[] str)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        Arrays.sort(str);
+
+        //It will convert strings to character
+        char[] arr1 = str[0].toCharArray();
+        char[] arr2 = str[str.length-1].toCharArray();
+
+        for(int i=0;i<arr1.length;i++)
+        {
+            if(arr1[i]!=arr2[i])
+                break;
+
+            sb.append(arr1[i]);
+        }
+        return sb.toString();
+
+    }
+    public static void main(String[] args) {
+
+        //new Leet14().CommonSequence(new String[]{"flower", "flow", "flight"});
+
+        String str=  new Leet14().CommonSequence(new String[]{"flower", "glow", "flight"});
+        System.out.println(str);
+
+        String[] str3={"flower", "glow", "flight"};
+        for(String s:str3)
+        {
+            System.out.println(s);
+        }
+
+        System.out.println("Arrays after sort");
+        Arrays.sort(str3);
+        for(String s:str3)
+        {
+            System.out.println(s);
+        }
+
+
+        String str1=  new Leet14().CommonSequence(new String[]{"dog","racecar","car"});
+        System.out.println(str1);
+    }
+}
